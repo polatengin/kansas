@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm run install
+RUN npm install
 RUN npm run build
 
 FROM node:16.14.0-alpine3.14
