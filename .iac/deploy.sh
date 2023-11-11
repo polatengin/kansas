@@ -18,6 +18,8 @@ pushd ../src/api
 az acr build --registry "acr${PROJECT_NAME}" --image "api:${TAG}" .
 popd
 
+kubectl apply -f ../src/api/deploy.yml
+
 pushd ../src/web
 az acr build --registry "acr${PROJECT_NAME}" --image "web:${TAG}" .
 popd
