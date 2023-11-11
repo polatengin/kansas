@@ -12,6 +12,9 @@ az aks create --resource-group "rg-${PROJECT_NAME}" --name "aks-${PROJECT_NAME}"
 
 az aks get-credentials --resource-group "rg-${PROJECT_NAME}" --name "aks-${PROJECT_NAME}"
 
+echo "Waiting for cluster to be ready"
+for i in {1..20}; do echo -n "."; sleep 1; done
+
 if ! command -v telepresence &> /dev/null
 then
   echo "telepresence could not be found, installing..."
