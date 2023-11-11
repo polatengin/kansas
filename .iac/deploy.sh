@@ -24,6 +24,8 @@ pushd ../src/web
 az acr build --registry "acr${PROJECT_NAME}" --image "web:${TAG}" .
 popd
 
+kubectl apply -f ../src/web/deploy.yml
+
 echo "Waiting for cluster to be ready"
 for i in {1..20}; do echo -n "."; sleep 1; done
 
