@@ -1,10 +1,10 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:7 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0-focal AS build
 WORKDIR /app
 COPY . .
 RUN dotnet restore
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:7
+FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine3.18
 WORKDIR /app
 COPY --from=build /app/out ./
 ENTRYPOINT ["dotnet", "api.dll"]
