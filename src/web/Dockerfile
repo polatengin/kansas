@@ -1,4 +1,4 @@
-FROM node:16.14.0-buster AS build
+FROM node:21.1-bullseye AS build
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-FROM node:16.14.0-alpine3.14
+FROM node:21.1-alpine3.18
 
 WORKDIR /app
 
