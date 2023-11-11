@@ -10,7 +10,9 @@ app.MapPost("/api/echo", (string message) => {
 
   var reversedMessage = new string(charArray);
 
-  return reversedMessage;
+  var machineName = Environment.MachineName;
+
+  return $"{machineName}::{reversedMessage}";
 });
 
 app.Run();
