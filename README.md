@@ -25,3 +25,15 @@ telepresence list
 > You should get the same services as the result of `kubectl get services` command.
 >
 > ![terminal run kubectl get service command](https://github.com/polatengin/kansas/assets/118744/36c15291-51f7-40ba-8382-086abfced306)
+
+To _intercept_ the traffic to the `web service`, run the following command:
+
+```bash
+telepresence intercept web-deployment --port 5000:80
+```
+
+Or, to _intercept_ the traffic to the `api service`, run the following command:
+
+```bash
+telepresence intercept api-deployment --port 5000:80
+```
