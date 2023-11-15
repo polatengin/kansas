@@ -12,6 +12,11 @@ az acr login --name "acr${PROJECT_NAME}"
 
 az aks create --resource-group "rg-${PROJECT_NAME}" --name "aks-${PROJECT_NAME}" --location "${LOCATION}" --node-count 1 --no-ssh-key --attach-acr "acr${PROJECT_NAME}" --enable-addons monitoring
 
+kubectl config unset users
+kubectl config unset current-context
+kubectl config unset contexts
+kubectl config unset clusters
+
 az aks get-credentials --resource-group "rg-${PROJECT_NAME}" --name "aks-${PROJECT_NAME}"
 
 pushd ../src/api
