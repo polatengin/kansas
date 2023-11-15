@@ -33,6 +33,7 @@ metadata:
   name: web-service
   namespace: default
 spec:
+  type: LoadBalancer
   selector:
     app: web-deployment
   ports:
