@@ -8,3 +8,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine3.18
 WORKDIR /app
 COPY --from=build /app/out ./
 ENTRYPOINT ["dotnet", "api.dll"]
+
+EXPOSE 5000
