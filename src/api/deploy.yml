@@ -33,6 +33,7 @@ metadata:
   name: api-service
   namespace: default
 spec:
+  type: LoadBalancer
   selector:
     app: api-deployment
   ports:
