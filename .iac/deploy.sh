@@ -28,10 +28,12 @@ pushd ../src/api
 popd
 
 pushd ../src/web
-az acr build --registry "acr${PROJECT_NAME}" --image "web:${TAG}" .
-popd
+  REPOSITORY_NAME="${PWD##*/}"
 
-kubectl apply -f ../src/web/deploy.yml
+  az acr build --registry "acr${PROJECT_NAME}" --image "${REPOSITORY_NAME}:${TAG}" .
+
+  cat ./deploy.yml | sed s/"{IMAGE}"/"acr${PROJECT_NAME}.azurecr.io\/${REPOSITORY_NAME}:${TAG}"/g | kubectl apply -f -
+popd
 
 echo "Waiting for cluster to be ready"
 for i in {1..20}; do echo -n "."; sleep 1; done
