@@ -20,10 +20,12 @@ kubectl config unset clusters
 az aks get-credentials --resource-group "rg-${PROJECT_NAME}" --name "aks-${PROJECT_NAME}"
 
 pushd ../src/api
-az acr build --registry "acr${PROJECT_NAME}" --image "api:${TAG}" .
-popd
+  REPOSITORY_NAME="${PWD##*/}"
 
-kubectl apply -f ../src/api/deploy.yml
+  az acr build --registry "acr${PROJECT_NAME}" --image "${REPOSITORY_NAME}:${TAG}" .
+
+  cat ./deploy.yml | sed s/"{IMAGE}"/"acr${PROJECT_NAME}.azurecr.io\/${REPOSITORY_NAME}:${TAG}"/g | kubectl apply -f -
+popd
 
 pushd ../src/web
 az acr build --registry "acr${PROJECT_NAME}" --image "web:${TAG}" .
