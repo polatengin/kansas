@@ -24,4 +24,4 @@ telepresence list
 
 > You should get the same services as the result of `kubectl get services` command.
 >
-> ![image](https://github.com/polatengin/kansas/assets/118744/36c15291-51f7-40ba-8382-086abfced306)
+> ![terminal run kubectl get service command](https://github.com/polatengin/kansas/assets/118744/36c15291-51f7-40ba-8382-086abfced306)
