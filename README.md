@@ -20,4 +20,6 @@ Run the following command to get list of services available in the cluster;
 telepresence list
 ```
 
+![terminal run telepresence list command](https://github.com/polatengin/kansas/assets/118744/51269112-443c-482e-bb98-a9953dbde9a3)
+
 > You should get the same services as the result of `kubectl get svc` command.
