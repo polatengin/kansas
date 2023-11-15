@@ -23,3 +23,5 @@ telepresence list
 ![terminal run telepresence list command](https://github.com/polatengin/kansas/assets/118744/51269112-443c-482e-bb98-a9953dbde9a3)
 
 > You should get the same services as the result of `kubectl get svc` command.
+>
+> ![image](https://github.com/polatengin/kansas/assets/118744/36c15291-51f7-40ba-8382-086abfced306)
