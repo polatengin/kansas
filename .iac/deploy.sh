@@ -36,7 +36,9 @@ pushd ../src/web
 popd
 
 echo "Waiting for cluster to be ready"
-for i in {1..20}; do echo -n "."; sleep 1; done
+for i in {0..30}; do echo -n "."; sleep 1; done
+echo ""
+echo "Cluster ready"
 
 if ! command -v telepresence &> /dev/null
 then
