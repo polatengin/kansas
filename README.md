@@ -44,6 +44,18 @@ telepresence intercept api-deployment --port 5000:80
 > telepresence intercept api-deployment --port 5000:80 --env-file .development.env
 > ```
 
+After running the `telepresence intercept` command, you should see the following message;
+
 ![terminal telepresence intercept command](https://github.com/polatengin/kansas/assets/118744/9d99eb83-bea4-4619-9024-b5dae3946864)
+
+Now, all the traffic to the `web service` (_port: 80_) will be redirected to your local machine (_port: 5000_)
+
+You can run a project locally on your machine (_port: 5000_) and test it with the `web service` in the cluster.
+
+When you are done with the debugging, you can leave the `telepresence` with the following command:
+
+```bash
+telepresence leave web-deployment
+```
 
 ![terminal telepresence leave command](https://github.com/polatengin/kansas/assets/118744/d0215a30-dd37-417f-a475-2826038056d8)
