@@ -37,3 +37,9 @@ Or, to _intercept_ the traffic to the `api service`, run the following command:
 ```bash
 telepresence intercept api-deployment --port 5000:80
 ```
+
+> You can add `--env-file {ENV_FILE_PATH}` argument to make the `telepresence` use the environment variables defined in the given file
+>
+> ```bash
+> telepresence intercept api-deployment --port 5000:80 --env-file .development.env
+> ```
