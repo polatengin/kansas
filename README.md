@@ -43,3 +43,5 @@ telepresence intercept api-deployment --port 5000:80
 > ```bash
 > telepresence intercept api-deployment --port 5000:80 --env-file .development.env
 > ```
+
+![image](https://github.com/polatengin/kansas/assets/118744/9d99eb83-bea4-4619-9024-b5dae3946864)
