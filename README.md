@@ -44,6 +44,6 @@ telepresence intercept api-deployment --port 5000:80
 > telepresence intercept api-deployment --port 5000:80 --env-file .development.env
 > ```
 
-![image](https://github.com/polatengin/kansas/assets/118744/9d99eb83-bea4-4619-9024-b5dae3946864)
+![terminal telepresence intercept command](https://github.com/polatengin/kansas/assets/118744/9d99eb83-bea4-4619-9024-b5dae3946864)
 
 ![image](https://github.com/polatengin/kansas/assets/118744/d0215a30-dd37-417f-a475-2826038056d8)
